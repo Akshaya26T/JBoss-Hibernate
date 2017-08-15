@@ -1,24 +1,16 @@
 package org.akshaya.jdo.dto;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Collection;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
-import javax.persistence.Embedded;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import javax.persistence.Lob;
-import javax.persistence.OneToOne;
+
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 //Data Model Class - Entity class
 
@@ -30,32 +22,15 @@ public class UserDetailsClass {
 	private int userId;
 	private String userName;
 	
-	@OneToOne
-	private Vehicle vehicle;
-	@Temporal (TemporalType.DATE)
-	private Date joinDate;
+	@OneToMany
+	private Collection <Vehicle> vehicle =new ArrayList<Vehicle>();
+
 	
-	public Vehicle getVehicle() {
+	public Collection<Vehicle> getVehicle() {
 		return vehicle;
 	}
-	public void setVehicle(Vehicle vehicle) {
+	public void setVehicle(Collection<Vehicle> vehicle) {
 		this.vehicle = vehicle;
-	}
-	
-	@Lob
-	private String description;
-	
-	public Date getJoinDate() {
-		return joinDate;
-	}
-	public void setJoinDate(Date joinDate) {
-		this.joinDate = joinDate;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
 	}
 	public int getUserId() {
 		return userId;

@@ -48,6 +48,7 @@
         <property name="cache.region.factory_class">org.hibernate.cache.infinispan.InfinispanRegionFactory</property> -->
         
         <mapping class="org.akshaya.jdo.dto.UserDetailsClass"/>
+        <mapping class ="org.akshaya.jdo.dto.UserDetailsClass.vehicle"/>
     </session-factory>
  
 </hibernate-configuration>
