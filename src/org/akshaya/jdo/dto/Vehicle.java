@@ -15,16 +15,7 @@ public class Vehicle {
 	@Id @GeneratedValue
 	private int vehicleId;
 	private String vehicleName;
-	@ManyToOne
-	private Collection<UserDetailsClass> userList = new ArrayList<UserDetailsClass>();
 	
-	public Collection<UserDetailsClass> getUserList() {
-		return userList;
-	}
-
-	public void setUserList(Collection<UserDetailsClass> userList) {
-		this.userList = userList;
-	}
 
 	public int getVehicleId() {
 		return vehicleId;

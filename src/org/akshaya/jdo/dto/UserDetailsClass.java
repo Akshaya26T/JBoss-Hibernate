@@ -4,15 +4,14 @@ import org.akshaya.jdo.dto.Vehicle;
 import java.util.ArrayList;
 import java.util.Collection;
 
-
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import javax.persistence.ManyToMany;
-
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 //Data Model Class - Entity class
@@ -25,7 +24,7 @@ public class UserDetailsClass {
 	private int userId;
 	private String userName;
 	
-	@ManyToMany
+	@OneToMany(cascade=CascadeType.PERSIST)
     Collection<Vehicle> vehicle =new ArrayList<Vehicle>();
 
 	
