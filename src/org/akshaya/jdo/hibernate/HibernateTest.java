@@ -17,14 +17,8 @@ public class HibernateTest {
 		Session session =sessionFactory.openSession();
 		session.beginTransaction();
 		
-		for(int i=0;i<10;i++){
-			
-			UserDetailsClass user = new UserDetailsClass();
-			user.setUserName("User"+i);
-			session.save(user);
-			
-		}
-
+		UserDetailsClass user = (UserDetailsClass)session.get(UserDetailsClass.class,6);
+		session.delete(user);
 		session.getTransaction().commit();
 		session.close();
 		
